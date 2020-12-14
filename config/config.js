@@ -4,7 +4,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": process.env.DBPASSWORD,
-    "database": "database_development",
+    "database": "gifNjelly",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
