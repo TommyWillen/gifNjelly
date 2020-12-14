@@ -16,9 +16,6 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-  };
-
-  Vote.associate = function(models) {
     Vote.belongsTo(models.GiphyPost, {
       foreignKey: {
         allowNull: false
