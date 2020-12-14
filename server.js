@@ -1,19 +1,19 @@
 // Requiring necessary npm packages
-var express = require("express");
-var session = require("express-session");
+const express = require("express");
+const session = require("express-session");
 
 // Requiring passport as we've configured it
 // ADD BELOW AFTER SETTING UP PASSPORT
-// var passport = require("./config/passport");
+// const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // ADD BELOW AFTER SETTING UP SEQUELIZE
-var db = require("./models");
+const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
-var app = express();
+const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
