@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var GiphyPost = sequelize.define("GiphyPost", {
     gifId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     caption: {
