@@ -75,17 +75,19 @@ $(document).ready(function () {
           //set up for images and title data
           $("#img" + i).html("<img src=" + gifImg + ">");
           
-          var selectionLink = $("<a>").attr("href", "gif.html")
+          var selectionLink = $("<a>").attr("href", "gif.html");
           var card = $("<div>").addClass("card col-sm-2");
           var imgTop = $("<div>").addClass("card-img-top");
-          var cardImg = $("<img>" + i).attr("src", gifImg).css({width: "150px", height: "150px,"});
-          var title = $("<p>").text(gifTitle)
+          var cardImg = $("<img>" + i).attr("src", gifImg);
+          //.css({width: "150px", height: "150px,"});
+          var title = $("<p>").text(gifTitle);
   
-          //creating top image card
-          imgTop.append(cardImg, title);
-         
-          card.append(imgTop);
-           $("#imageCard").append(card);
+           //creating top image card
+            imgTop.append(cardImg);
+            
+            card.append(imgTop);
+            // card.append(title);
+            $("#imageCard").append(card, title);
           
           
           var cardBody = $("<div>").addClass("card-body");
