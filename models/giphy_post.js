@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize, DataTypes) {
-  var GiphyPost = sequelize.define("GiphyPost", {
+  const GiphyPost = sequelize.define("GiphyPost", {
     gifId: {
       type: DataTypes.STRING,
       allowNull: false,

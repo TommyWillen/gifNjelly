@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize, DataTypes) {
-  var Vote = sequelize.define("Vote", {
+  const Vote = sequelize.define("Vote", {
     gif: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
