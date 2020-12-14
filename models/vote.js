@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, Sequelize, DataTypes) {
   var Vote = sequelize.define("Vote", {
     gif: {
       type: DataTypes.BOOLEAN,
@@ -7,7 +7,15 @@ module.exports = function(sequelize, DataTypes) {
     jelly: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-    }
+    },
+    createdAt: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+    },
+    updatedAt: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"),
+    },
   });
 
   Vote.associate = function(models) {
