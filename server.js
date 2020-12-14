@@ -10,7 +10,7 @@ var session = require("express-session");
 var PORT = process.env.PORT || 8080;
 
 // ADD BELOW AFTER SETTING UP SEQUELIZE
-// var db = require("./models");
+var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -32,8 +32,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 
 // Syncing our database and logging a message to the user upon success
 // ADD BELOW AFTER SETTING UP SEQUELIZE
-// db.sequelize.sync().then(function() {
-app.listen(PORT, function() {
-  console.log("Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
 });
-// });
