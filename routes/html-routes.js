@@ -19,7 +19,7 @@ app.get("/signup", function(req, res){
 });
 
 app.get("/members", isAuthenticated, function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/index.handlebars"));
+  res.render("/index");
 });
 
 }
