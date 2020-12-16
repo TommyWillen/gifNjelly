@@ -1,4 +1,4 @@
-$(document).ready(function () {
+// $(document).ready(function () {
 
 //--------------Processing SIGN UP and LOG IN --------------------
 // ----LOGIN-------------
@@ -152,5 +152,5 @@ $(document).ready(function () {
     $("#searchButton").on("click", function () {
       randomGif();
       });
-  });
+  // });
   

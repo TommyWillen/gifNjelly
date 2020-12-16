@@ -27,7 +27,7 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 
 // Requiring our routes
 // ADD BELOW AFTER SETTING UP ROUTES
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
