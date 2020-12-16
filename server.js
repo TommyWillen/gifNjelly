@@ -6,12 +6,6 @@ const session = require("express-session");
 // ADD BELOW AFTER SETTING UP PASSPORT
 // const passport = require("./config/passport");
 
-// Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8080;
-
-// ADD BELOW AFTER SETTING UP SEQUELIZE
-const db = require("./models");
-
 // Creating express app and configuring middleware needed for authentication
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -32,8 +26,5 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 
 // Syncing our database and logging a message to the user upon success
 // ADD BELOW AFTER SETTING UP SEQUELIZE
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-  });
-});
+
+module.exports = app;
