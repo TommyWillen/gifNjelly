@@ -1,6 +1,7 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const exphbs = require("express-handlebars");
 
 // Requiring passport as we've configured it
 // ADD BELOW AFTER SETTING UP PASSPORT
@@ -20,6 +21,10 @@ app.use(express.static("public"));
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+
+// handlebars enginges
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // ADD BELOW AFTER SETTING UP PASSPORT
 // app.use(passport.initialize());
