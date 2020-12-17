@@ -17,4 +17,8 @@ app.get("/signup", function(req, res){
     res.render("signup");
 });
 
+app.get("/members", function(req, res){
+    res.render("members");
+});
+
 }
