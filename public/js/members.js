@@ -151,5 +151,8 @@ $(document).ready(function () {
   $("#searchButton").on("click", function () {
     randomGif();
   });
+  $("#historyButton").on("click", function () {
+    location.href = "/vote";
+  });
 });
 
