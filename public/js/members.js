@@ -2,7 +2,7 @@
 //--------calling random gifs--------
 
 
-    const localGifId = [];
+    const localGifId = "";
     let limit = 4;
     const apiKey = "W6nxutN5k5yRT98stgeJAxQjwXyesMTQ";
 
@@ -75,7 +75,7 @@
             let newGifId = gifId.currentTarget.attributes[2].value;
             localGifId.push(newGifId);
             //Call function that will load selected gif and control gif.html
-            commentGif();
+            newPost();
 
           });
         }
@@ -86,7 +86,7 @@
 
     //Function to control comment in gif.html
 
- function commentGif(){
+ function newPost(){
     const queryUrl =
         "https://api.giphy.com/v1/gifs/trending?api_key=" +
         apiKey +
@@ -99,7 +99,7 @@
         console.log(response)
 // Do a POST request to server to send the selected Gif ID
 //Do a POST request to server to send input from comment box
-
+        
       })
 
     }
