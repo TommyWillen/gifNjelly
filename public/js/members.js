@@ -1,57 +1,14 @@
-$(document).ready(function () {
 
-  //--------------Processing SIGN UP and LOG IN --------------------
-  // ----LOGIN-------------
-  //  const loginForm = $("form.login");
-  // const emailInput = $("input#email-input");
-  // const passwordInput = $("input#password-input");
-
-  // // When the form is submitted, we validate there's an email and password entered
-  // loginForm.on("submit", function(event) {
-  //   event.preventDefault();
-  //   const userData = {
-  //     email: emailInput.val().trim(),
-  //     password: passwordInput.val().trim()
-  //   };
-
-  //   if (!userData.email || !userData.password) {
-  //     return;
-  //   }
-
-  //   // If we have an email and password we run the loginUser function and clear the form
-  //   loginUser(userData.email, userData.password);
-  //   emailInput.val("");
-  //   passwordInput.val("");
-  // });
-
-  // ----SIGN-UP-------------
-
-  // function loginUser(email, password) {
-  //     $.post("/api/login", {
-  //       email: email,
-  //       password: password
-  //     })
-  //       .then(function() {
-  //         window.location.replace("/members");
-  //         // If there's an error, log the error
-  //       })
-  //       .catch(function(err) {
-  //         console.log(err);
-  //       });
-  //   }
+//--------calling random gifs--------
 
 
+    const localGifId = [];
+    let limit = 4;
+    const apiKey = "W6nxutN5k5yRT98stgeJAxQjwXyesMTQ";
 
-  //--------calling random gifs--------
-
-
-  const localGifId = [];
-  let limit = 4;
-  const apiKey = "W6nxutN5k5yRT98stgeJAxQjwXyesMTQ";
-
-  function randomGif() {
-
-    const queryUrl =
+    function randomGif() {
+      
+      const queryUrl =
         "https://api.giphy.com/v1/gifs/trending?api_key=" +
         apiKey +
         "&limit=" +
@@ -134,22 +91,23 @@ $(document).ready(function () {
         "https://api.giphy.com/v1/gifs/trending?api_key=" +
         apiKey +
         "&id="+localGifId+"&rating=g";
+  
+      $.ajax({
+        url: queryUrl,
+        method: "GET",
+      }).then(function (response) {
+        console.log(response)
+// Do a POST request to server to send the selected Gif ID
+//Do a POST request to server to send input from comment box
 
-    $.ajax({
-      url: queryUrl,
-      method: "GET",
-    }).then(function (response) {
-      console.log(response);
-      // Do a POST request to server to send the selected Gif ID
-      //Do a POST request to server to send input from comment box
+      })
 
-    });
+    }
 
-  }
-
-  //Click handler
-
-  $("#searchButton").on("click", function () {
-    randomGif();
-  });
-});
+    //Click handler
+  
+    $("#searchButton").on("click", function () {
+      randomGif();
+      });
+  // });
+  
