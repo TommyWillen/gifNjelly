@@ -1,11 +1,10 @@
 $(document).ready(() => {
-  const signUpForm = $("#sign-up");
   const firstNameInput = $("#first-name");
   const lastNameInput = $("#last-name");
   const userNameInput = $("#user-name");
   const emailInput = $("#email");
-  const pass1Input = $(".password1");
-  const pass2Input = $(".password2");
+  const pass1Input = $("#password-input1");
+  const pass2Input = $("#password-input2");
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
@@ -27,9 +26,9 @@ $(document).ready(() => {
       .catch(handleLoginErr);
   };
 
-  signUpForm.on("click", (event) => {
+  $("#sign-btn").click(function (event) {
     event.preventDefault();
-    if(pass1Input.val().trim() === pass2Input.val().trim()) {
+    if(pass1Input.val().trim() !== pass2Input.val().trim()) {
       alert("Your passwords must match!");
       return;
     }
@@ -44,12 +43,12 @@ $(document).ready(() => {
       return;
     }
     signUpUser(userData.firstName, userData.lastName, userData.userName, userData.email, userData.password);
-    firstNameInput.val("");
-    lastNameInput.val("");
-    userNameInput.val("");
-    emailInput.val("");
-    pass1Input.val("");
-    pass2Input.val("");
+  //   firstNameInput.val("");
+  //   lastNameInput.val("");
+  //   userNameInput.val("");
+  //   emailInput.val("");
+  //   pass1Input.val("");
+  //   pass2Input.val("");
   });
 
 

@@ -26,6 +26,6 @@ app.use(passport.session());
 // Requiring our routes
 // ADD BELOW AFTER SETTING UP ROUTES
 require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 module.exports = app;
