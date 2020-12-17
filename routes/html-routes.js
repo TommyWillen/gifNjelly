@@ -27,6 +27,19 @@ module.exports = (app) => {
     res.render("newgif", {gifId:selectedGif});
   });
 
+  app.get("/vote", function(req, res){
+    // $.ajax({
+    //   method: "GET",
+    //   url: "/api/giphypost/random"
+    // }).then(function(result){
+    //   let oldGifs = result;
+    res.render("oldgifs", {oldGifs:[{
+      id: 1,
+      gifId: "Xf1WoKFNu3LTc9ce1M",
+      caption: "caption"
+    }]});
+    // });
+  });
 };
 // app.get("/members", isAuthenticated, function(req, res) {
 //   res.render("/index");
