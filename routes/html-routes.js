@@ -7,11 +7,11 @@ const express = require("express");
 module.exports = (app) => {
 
 app.get("/", function(req, res){
-    res.render("index");
+    res.render("index",{loginJs:true});
 });
 
 app.get("/login", function(req, res){
-    res.render("index");
+    res.render("index", {loginJs:true});
 });
 
 app.get("/signup", function(req, res){
