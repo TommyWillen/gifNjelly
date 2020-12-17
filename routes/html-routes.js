@@ -24,16 +24,17 @@ app.get("/members", function(req, res){
     res.render("members", {membersJs: true});
 });
 
+app.get("/newpost", function(req, res){
+  res.render("newpost", {membersJs: true});
+});
+
+
 app.post("/newpost", function(req, res){
   let image=req.body.imagefile;
-  
+  res.redirect("newpost");
+
   res.render("newpost", {newpostJs: true, imgfile: image});
 
 });
 
 }
-// app.get("/members", isAuthenticated, function(req, res) {
-//   res.render("/index");
-// });
-
-// }
