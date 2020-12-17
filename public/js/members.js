@@ -76,7 +76,7 @@ $(document).ready(function () {
         //set up for images and title data
         $("#img" + i).html("<img src=" + gifImg + ">");
 
-        const selectionLink = $("<a>").attr("href", "gif.html");
+        const selectionLink = $("<a>").attr("href", "/gifpost/"+gifId);
         const card = $("<div>").addClass("card col-sm-2");
         const imgTop = $("<div>").addClass("card-img-top");
         const cardImg = $("<img>" + i).attr("src", gifImg);
@@ -118,8 +118,7 @@ $(document).ready(function () {
           let newGifId = gifId.currentTarget.attributes[2].value;
           localGifId.push(newGifId);
           //Call function that will load selected gif and control gif.html
-          commentGif();
-
+          location.href = "/newgif";
         });
       }
     });
@@ -129,23 +128,23 @@ $(document).ready(function () {
 
   //Function to control comment in gif.html
 
-  function commentGif(){
-    const queryUrl =
-        "https://api.giphy.com/v1/gifs/trending?api_key=" +
-        apiKey +
-        "&id="+localGifId+"&rating=g";
+  // function commentGif(){
+  //   const queryUrl =
+  //       "https://api.giphy.com/v1/gifs/trending?api_key=" +
+  //       apiKey +
+  //       "&id="+localGifId+"&rating=g";
 
-    $.ajax({
-      url: queryUrl,
-      method: "GET",
-    }).then(function (response) {
-      console.log(response);
-      // Do a POST request to server to send the selected Gif ID
-      //Do a POST request to server to send input from comment box
+  //   $.ajax({
+  //     url: queryUrl,
+  //     method: "GET",
+  //   }).then(function (response) {
+  //     console.log(response);
+  //     // Do a POST request to server to send the selected Gif ID
+  //     //Do a POST request to server to send input from comment box
 
-    });
+  //   });
 
-  }
+  // }
 
   //Click handler
 
