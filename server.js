@@ -30,9 +30,9 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 // ADD BELOW AFTER SETTING UP SEQUELIZE
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-  });
-});
+// db.sequelize.sync().then(function() {
+//   app.listen(PORT, function() {
+//     console.log("Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+//   });
+// });
 module.exports = app;
