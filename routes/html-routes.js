@@ -18,8 +18,19 @@ app.get("/signup", function(req, res){
     res.render("signup");
 });
 
+<<<<<<< HEAD
+// app.get("/members", isAuthenticated, function(req, res) {
+//   res.render("/index");
+// });
+=======
+app.get("/members", function(req, res){
+    res.render("members");
+});
+>>>>>>> Frontend
+
+}
 // app.get("/members", isAuthenticated, function(req, res) {
 //   res.render("/index");
 // });
 
-}
+// }

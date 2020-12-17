@@ -6,6 +6,15 @@ form {
   display: inline-block;
 }
 
-h3 {
-  text-decoration-color: blueviolet;
+.navtext {
+  color:#d4b00f;
 }
+
+.container {
+  align-content: center;
+}
+
+.submitbtn {
+  color: white;
+}
+
