@@ -18,8 +18,13 @@ app.get("/signup", function(req, res){
     res.render("/signup");
 });
 
-app.get("/members", isAuthenticated, function(req, res) {
-  res.render("/index");
+app.get("/members", function(req, res){
+    res.render("members");
 });
 
 }
+// app.get("/members", isAuthenticated, function(req, res) {
+//   res.render("/index");
+// });
+
+// }
