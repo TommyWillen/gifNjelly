@@ -30,14 +30,14 @@ module.exports = function(sequelize, Sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    createdAt: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-    },
-    updatedAt: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"),
-    },
+    // createdAt: {
+    //   type: Sequelize.DATE,
+    //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+    // },
+    // updatedAt: {
+    //   type: Sequelize.DATE,
+    //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"),
+    // },
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
