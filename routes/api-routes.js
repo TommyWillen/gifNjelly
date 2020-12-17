@@ -46,7 +46,14 @@ module.exports = (app) => {
   //   call to get 5 posts to vote on
   app.get("/api/giphypost/random", (req, res) => {
     db.GiphyPost.findAll({
-      order: sequelize.random()
+      order: sequelize.random(),
+      include: [db.User],
+      attributes: {
+        exclude: ["firstName", "lastName", "email", "password"]
+      }
+    }).then(gifPost => {
+      let gifPostFilter = gifPost.filter(post => post.username !== req.user.userName);
+      res.json(gifPostFilter);
     });
   });
   // call to get top 5 old posts
