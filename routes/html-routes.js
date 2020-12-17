@@ -18,16 +18,13 @@ app.get("/signup", function(req, res){
     res.render("/signup");
 });
 
-<<<<<<< HEAD
 app.get("/members", function(req, res){
     res.render("members");
 });
 
 }
-=======
-app.get("/members", isAuthenticated, function(req, res) {
-  res.render("/index");
-});
+// app.get("/members", isAuthenticated, function(req, res) {
+//   res.render("/index");
+// });
 
-}
->>>>>>> 9177dcc97b20f9ef17b904a0bc11d066494a3f95
+// }
