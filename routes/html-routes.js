@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+// var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 module.exports = (app) => {
