@@ -153,3 +153,4 @@ $(document).ready(function () {
     randomGif();
   });
 });
+
