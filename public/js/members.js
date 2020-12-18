@@ -26,7 +26,7 @@ function randomGif() {
       $("#img" + i).html("<img src=" + gifImg + ">");
 
       const selectionLink = $("<a>").attr("href", "/gifpost/"+gifId);
-      const width = "width: 13rem"
+      const width = "width: 13rem";
       const card = $("<div>").addClass("card randomGifcol").attr("style", width);
       const imgTop = $("<div>").addClass("card-img-top");
       const cardImg = $("<img>" + i).attr("src", gifImg); //saving the url
@@ -72,7 +72,7 @@ function randomGif() {
 //loading newpost.html to do the next action
 //this is where we can input comment
 // function newPost() {
-  
+
 //   $.ajax({
 //     url: "/newpost",
 //     method: "POST",
