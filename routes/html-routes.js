@@ -25,7 +25,11 @@ app.get("/members", function(req, res){
 });
 
 app.get("/newpost", function(req, res){
-  res.render("newpost", {membersJs: true});
+  res.render("newpost", {newpostJs: true});
+});
+
+app.get("oldpost", function(req, res){
+  res.render("newpost", {oldgifJs: true});
 });
 
 app.get("/gifpost/:id", function(req, res){
