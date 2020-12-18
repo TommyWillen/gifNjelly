@@ -1,6 +1,10 @@
+// require("dotenv").config();
+
+
+
 let localGifUrl = "";
 let limit = 4;
-const apiKey = "W6nxutN5k5yRT98stgeJAxQjwXyesMTQ";
+const apiKey = "5TcbvWsS2F66N8Og45gJ9zbBY0zIyTrB";
 
 //--------calling random gifs--------
 
