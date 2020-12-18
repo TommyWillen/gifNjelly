@@ -3,7 +3,7 @@ const passport = require("../config/passport");
 require("dotenv").config();
 const axios = require("axios");
 
-module.exports = (app) => {
+module.exports = (app, axios) => {
   // call to login
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     console.log(req.user);

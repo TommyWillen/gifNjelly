@@ -2,6 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+const axios = require("axios");
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -26,8 +27,7 @@ app.use(passport.session());
 // Requiring our routes
 // ADD BELOW AFTER SETTING UP ROUTES
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
-
+require("./routes/api-routes.js")(app, axios);
 // Syncing our database and logging a message to the user upon success
 // ADD BELOW AFTER SETTING UP SEQUELIZE
 // db.sequelize.sync().then(function() {
