@@ -1,5 +1,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
+require("dotenv").config();
+const axios = require("axios");
 
 module.exports = (app) => {
   // call to login
@@ -22,6 +24,16 @@ module.exports = (app) => {
       .catch((err) => {
         res.status(401).json(err);
       });
+  });
+
+  //   call to grab 5 random giphies
+  app.get("/api/gif/random", (req,res) => {
+    const route = "https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.API_KEY + "&limit=4&rating=g";
+    axios.get(route).then(response => {
+        res.json(response.data);
+    })
+    // const json = await response.json();
+    
   });
   // call to create post
 

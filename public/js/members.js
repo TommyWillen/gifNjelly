@@ -5,23 +5,13 @@
 // let localGifUrl = "";
 let localGifId = "";
 let limit = 4;
-// const apiKey = process.env.APIKEY;
-apiKey = "W6nxutN5k5yRT98stgeJAxQjwXyesMTQ";
 
 //--------calling random gifs--------
 
 function randomGif() {
-  // const apiKey = process.env.APIKEY;
-  const queryUrl =
-    "https://api.giphy.com/v1/gifs/trending?api_key=" +
-    apiKey +
-    "&limit=" +
-    limit +
-    "&rating=g";
-
   $.ajax({
-    url: queryUrl,
-    method: "GET",
+    url: "/api/gif/random",
+    method: "GET"
   }).then(function (response) {
     console.log(response);
 
