@@ -39,6 +39,10 @@ app.get("oldpost", function(req, res){
   res.render("newpost", {oldgifJs: true});
 });
 
+app.get("/vote", function(req, res){
+  res.render("oldpost", {oldgifJs: true});
+});
+
   app.get("/gifpost/:id", function(req, res){
     let selectedGif = req.params.id;
     res.render("newpost", {gifId:selectedGif, newpostJs: true});
