@@ -29,7 +29,8 @@ function randomGif() {
       $("#img" + i).html("<img src=" + gifImg + ">");
 
       // const selectionLink = $("<a>").attr("href", "");
-      const card = $("<div>").addClass("card");
+      const width = "width: 13rem"
+      const card = $("<div>").addClass("card randomGifcol").attr("style", width);
       const imgTop = $("<div>").addClass("card-img-top");
       const cardImg = $("<img>" + i).attr("src", gifImg); //saving the url
       const title = $("<p>").text(gifTitle);
@@ -61,7 +62,7 @@ function randomGif() {
         console.log("Value: ", gifUrl.currentTarget.attributes[2].value);
         let newGifUrl = gifUrl.currentTarget.attributes[2].value;
         localGifUrl = newGifUrl;
-        
+
         //Call function that will load selected gif and control gif.html
         console.log("the url for localGifUrl:", localGifUrl);
         newPost();
