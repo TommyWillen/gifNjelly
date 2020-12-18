@@ -1,20 +1,12 @@
 let localGifUrl = "";
 let limit = 4;
-const apiKey = "W6nxutN5k5yRT98stgeJAxQjwXyesMTQ";
 
 //--------calling random gifs--------
 
 function randomGif() {
-  const queryUrl =
-    "https://api.giphy.com/v1/gifs/trending?api_key=" +
-    apiKey +
-    "&limit=" +
-    limit +
-    "&rating=g";
-
   $.ajax({
-    url: queryUrl,
-    method: "GET",
+    url: "/api/gif/random",
+    method: "GET"
   }).then(function (response) {
     console.log(response);
 
@@ -29,7 +21,7 @@ function randomGif() {
       $("#img" + i).html("<img src=" + gifImg + ">");
 
       // const selectionLink = $("<a>").attr("href", "");
-      const width = "width: 13rem"
+      const width = "width: 13rem";
       const card = $("<div>").addClass("card randomGifcol").attr("style", width);
       const imgTop = $("<div>").addClass("card-img-top");
       const cardImg = $("<img>" + i).attr("src", gifImg); //saving the url
@@ -84,7 +76,9 @@ function newPost() {
   }).then(function (err) {
     console.log("checking localGifUrl value: ", localGifUrl);
 
-    if (err) throw err;
+    if (err) {
+      throw err;
+    }
 
     //need to redirect
   });
