@@ -8,7 +8,7 @@
     "start": "node start.js",
     "lint": "eslint **/*.js --quiet",
     "lintfix": "eslint **/*.js --fix",
-    "watch": "nodemon"
+    "watch": "nodemon start.js"
   },
   "repository": {
     "type": "git",
