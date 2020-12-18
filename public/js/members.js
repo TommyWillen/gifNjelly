@@ -5,6 +5,9 @@
 // let localGifUrl = "";
 let localGifId = "";
 let limit = 4;
+let apiKey="W6nxutN5k5yRT98stgeJAxQjwXyesMTQ"
+
+
 
 //--------calling random gifs--------
 
