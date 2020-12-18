@@ -35,6 +35,10 @@ app.get("/newpost", function(req, res){
   res.render("newpost", {membersJs: true});
 });
 
+app.get("/gifpost/:id", function(req, res){
+  let selectedGif = req.params.id;
+  res.render("newpost", {gifId:selectedGif});
+});
 
 app.post("/newpost", function(req, res){
   let image=req.body.imagefile;
