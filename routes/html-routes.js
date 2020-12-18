@@ -18,6 +18,13 @@ app.get("/signup", function(req, res){
     res.render("signup", {signupJs: true});
 });
 
+app.get("/meettheteam", function(req, res){
+  res.render("meettheteam");
+});
+
+// app.get("/meettheteam", function(req, res){
+//   res.render("meettheteam", {membersJs: true});
+// });
 
 
 app.get("/members", function(req, res){
