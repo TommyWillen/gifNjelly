@@ -29,7 +29,7 @@ function randomGif() {
       $("#img" + i).html("<img src=" + gifImg + ">");
 
       // const selectionLink = $("<a>").attr("href", "");
-      const card = $("<div>").addClass("card col-sm-2");
+      const card = $("<div>").addClass("card");
       const imgTop = $("<div>").addClass("card-img-top");
       const cardImg = $("<img>" + i).attr("src", gifImg); //saving the url
       const title = $("<p>").text(gifTitle);
@@ -38,8 +38,6 @@ function randomGif() {
       imgTop.append(cardImg);
 
       card.append(imgTop);
-      // card.append(title);
-      $("#imageCard").append(card, title);
 
       const cardBody = $("<div>").addClass("card-body");
 
@@ -51,24 +49,19 @@ function randomGif() {
         .text("Select");
       cardButton.attr("data-id", gifImg);
 
-      //loading newpost.html to do the next action
-      //this is where we can input comment
-
       // selectionLink.append(cardButton);
-      cardBody.append(cardButton);
+      cardBody.append(title, cardButton);
+      card.append(cardBody);
 
-      //   cardBody.append(cardButton)
-
-      //appending to main div
-      $("#imageCard").append(cardBody);
+      $("#imageCard").append(card);
 
       //getting id on selected and next move.
       cardButton.on("click", function (gifUrl) {
         console.log(gifUrl);
         console.log("Value: ", gifUrl.currentTarget.attributes[2].value);
         let newGifUrl = gifUrl.currentTarget.attributes[2].value;
-        // debugger;
         localGifUrl = newGifUrl;
+        
         //Call function that will load selected gif and control gif.html
         console.log("the url for localGifUrl:", localGifUrl);
         newPost();
@@ -89,9 +82,9 @@ function newPost() {
     },
   }).then(function (err) {
     console.log("checking localGifUrl value: ", localGifUrl);
-    
+
     if (err) throw err;
-    
+
     //need to redirect
   });
 }
