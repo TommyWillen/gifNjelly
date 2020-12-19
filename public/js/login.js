@@ -5,14 +5,11 @@ $(document).ready(function(){
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   const loginUser = (email, password) => {
-    console.log(email);
-    console.log(password);
     $.post("/api/login", {
       email: email,
       password: password
     })
       .then(() => {
-        console.log("test2");
         window.location.replace("/members");
         // If there's an error, log the error
       })
@@ -22,7 +19,6 @@ $(document).ready(function(){
   };
 
   loginBtn.click(event => {
-    console.log("test");
     event.preventDefault();
     const userData = {
       email: emailInput.val().trim(),
