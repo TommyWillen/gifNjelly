@@ -39,10 +39,18 @@ module.exports = (app) => {
       include: [db.User],
 
     }).then(gifPost => {
-    // let gifPostFilter = gifPost.filter(post => post.username !== req.user.userName);
-    // res.json(gifPostFilter);
-      console.log("gifPost is: " + gifPost[0].User.userName);
+      for (var i = gifPost.length - 1; i > 0; i--) {
+        //choosing a random number between 0 and the length of the array
+        var j = Math.floor(Math.random() * (i + 1));
+        //creating a variable which gets the last item of the array
+        var selected = gifPost[i];
+        // making the last item of the array the randomly selected array value
+        gifPost[i] = gifPost[j];
+        //moving the value that was initially the last value of the array to the position of the randomly selected value
+        gifPost[j] = selected;
+      }
       let oldGif = [];
+
       gifPost.forEach(gif => {
         let giphy = {
           id: gif.id,
@@ -53,8 +61,15 @@ module.exports = (app) => {
           caption: gif.caption
         };
         oldGif.push(giphy);
-        res.render("oldpost", {oldpostJs: true, giphyPosts: oldGif});
       });
+
+      let limitedGifs = [];
+
+      for (let i=0; i<6; i++){
+        limitedGifs.push(oldGif[i]);
+      }
+
+      res.render("oldpost", {oldpostJs: true, giphyPosts: limitedGifs});
     });
 
   });
