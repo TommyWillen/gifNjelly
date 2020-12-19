@@ -1,24 +1,22 @@
-$("#submitButton").on("click", function (event) {
+$("#submitButton").click(function (event) {
   event.preventDefault();
   let gifId = $("#chosenGif").attr("data-id");
   let caption = $("#caption-input").val();
   let giphyPost = {
+    gifId: gifId,
     caption: caption,
     gifId:gifId
   };
   console.log(giphyPost);
-  $.ajax({
-    method: "POST",
-    url: "/api/giphypost/" + gifId,
+  $.ajax("/api/newpost", {
+    type: "POST",
     data: giphyPost,
-  })
-    .then(function () {
-      console.log(result);
-      Swal.fire("Your comment has been added.").then(function () {
-      location.href = "/oldpost";
-      });
-    })
-    .catch(function (err) {
+    success: function (response){
+      console.log(response);
+      location.href="/members";
+    },
+    error: function (err){
       console.log(err);
-    });
+    }
+  });
 });
