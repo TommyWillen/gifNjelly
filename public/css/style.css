@@ -1,3 +1,6 @@
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
 /* form-box {
   align-items: center;
 } */
@@ -20,6 +23,9 @@ navbar {
 
 }  */
 
+body {
+  margin-bottom: 50px;
+}
 
 .login {
   width: 320px;
@@ -42,7 +48,7 @@ box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 /* ---------body--------- */
 form {
   display: inline-block;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .navtext {
@@ -51,7 +57,7 @@ form {
 
 .container {
   align-content: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .submitbtn {
@@ -83,7 +89,7 @@ form {
   bottom: 0;
   width: 100%;
   /* overflow: hidden; */
-  overflow: scroll;
+  overflow: hidden;
              /* Footer height */
 }
 .footertext {
