@@ -109,92 +109,94 @@ module.exports = (app, axios) => {
 
   // call to post a vote
   app.post("/api/vote/:postId", (req, res) => {
-    let postId = req.params.postId;
-    let gifVote = req.body.gif;
-    let jellyVote = req.body.jelly;
-    let userId = req.body.userId;
+    console.log(req.body);
+    console.log(req.user);
+    // let postId = req.params.postId;
+    // let gifVote = req.body.gif;
+    // let jellyVote = req.body.jelly;
+    // let userId = req.body.userId;
 
-    function deleteVote(postId, userId) {
-      db.Vote.destroy({
-        where: {
-          GiphyPostId: postId,
-          UserId: userId
-        }
-      });
-    }
+    // function deleteVote(postId, userId) {
+    //   db.Vote.destroy({
+    //     where: {
+    //       GiphyPostId: postId,
+    //       UserId: userId
+    //     }
+    //   });
+    // }
 
-    function addVote(postId, userId, gifVote, jellyVote) {
-      db.Vote.create({
-        gif: gifVote,
-        jelly: jellyVote,
-        UserId: userId,
-        GiphyPostId: postId
-      });
+    // function addVote(postId, userId, gifVote, jellyVote) {
+    //   db.Vote.create({
+    //     gif: gifVote,
+    //     jelly: jellyVote,
+    //     UserId: userId,
+    //     GiphyPostId: postId
+    //   });
 
-      if (gifVote) {
-        let newGifScore;
-        db.GiphyPost.findOne({
-          where: {
-            id: postId
-          }
-        }).then(function (result) {
-          newGifScore = parseInt(result.gifScore) + 1;
-          db.GiphyPost.update({
-            gifScore: newGifScore
-          },
-          {
-            where: {
-              id: postId
-            }
-          }
-          ).then(function () {
-            res.end;
-          });
-        });
+    //   if (gifVote) {
+    //     let newGifScore;
+    //     db.GiphyPost.findOne({
+    //       where: {
+    //         id: postId
+    //       }
+    //     }).then(function (result) {
+    //       newGifScore = parseInt(result.gifScore) + 1;
+    //       db.GiphyPost.update({
+    //         gifScore: newGifScore
+    //       },
+    //       {
+    //         where: {
+    //           id: postId
+    //         }
+    //       }
+    //       ).then(function () {
+    //         res.end;
+    //       });
+    //     });
 
 
-      } else {
-        let newJellyScore;
-        db.GiphyPost.findOne({
-          where: {
-            id: postId
-          }
-        }).then(function (result) {
-          newJellyScore = parseInt(result.jellyScore) + 1;
-          db.GiphyPost.update({
-            jellyScore: newJellyScore
-          },
-          {
-            where: {
-              id: postId
-            }
-          }
-          ).then(function () {
-            res.end;
-          });
-        });
+    //   } else {
+    //     let newJellyScore;
+    //     db.GiphyPost.findOne({
+    //       where: {
+    //         id: postId
+    //       }
+    //     }).then(function (result) {
+    //       newJellyScore = parseInt(result.jellyScore) + 1;
+    //       db.GiphyPost.update({
+    //         jellyScore: newJellyScore
+    //       },
+    //       {
+    //         where: {
+    //           id: postId
+    //         }
+    //       }
+    //       ).then(function () {
+    //         res.end;
+    //       });
+    //     });
 
-      }
-    }
+    //   }
+    // }
 
-    db.Votes.findAll({
-      where: {
-        GiphyPostId: postId
-      }
-    }).then(function (result) {
-      let alreadyVoted = result.filter(vote => vote.UserId === userId);
-      if (alreadyVoted) {
-        deleteVote(postId, userId);
-        res.end;
-      } else {
-        addVote(postId, userId, gifVote, jellyVote);
-        res.end;
-      }
-    })
-      .catch(function (err) {
-        console.log(err);
-        res.end;
-      });
+    // db.Votes.findAll({
+    //   where: {
+    //     GiphyPostId: postId
+    //   }
+    // }).then(function (result) {
+    //   let alreadyVoted = result.filter(vote => vote.UserId === userId);
+    //   if (alreadyVoted) {
+    //     deleteVote(postId, userId);
+    //     res.end;
+    //   } else {
+    //     addVote(postId, userId, gifVote, jellyVote);
+    //     res.end;
+    //   }
+    // })
+    //   .catch(function (err) {
+    //     console.log(err);
+    //     res.end;
+    //   });
   });
 
 };

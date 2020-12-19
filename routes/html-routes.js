@@ -2,7 +2,8 @@
 // const express = require("express");
 
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
+const db = require("../models");
+// const sequelize = require("sequelize");
 
 module.exports = (app) => {
 
@@ -31,23 +32,34 @@ module.exports = (app) => {
     res.render("members", {membersJs: true});
   });
 
-  app.get("/oldpost", function(req, res){
+  app.get("/vote", isAuthenticated, function(req, res){
   // this is a placeholder until we get actual posts into the database
-    let oldGif = {
-      gifId: "OVHV6lLv6tfWFAhWyi",
-      caption: "Shopping during christmas be like...",
-      gifScore: 0,
-      jellyScore: 0,
-    };
-    res.render("oldpost", {oldgifJs: true, oldGifs: [oldGif]});
+    db.GiphyPost.findAll({
+    // order: sequelize.random(),
+      include: [db.User],
+
+    }).then(gifPost => {
+    // let gifPostFilter = gifPost.filter(post => post.username !== req.user.userName);
+    // res.json(gifPostFilter);
+      console.log("gifPost is: " + gifPost[0].User.userName);
+      let oldGif = [];
+      gifPost.forEach(gif => {
+        let giphy = {
+          userName: gif.User.userName,
+          gifId: gif.gifId,
+          gifScore: gif.gifScore,
+          jellyScore: gif.jellyScore,
+          caption: gif.caption
+        };
+        oldGif.push(giphy);
+        res.render("oldpost", {oldpostJs: true, oldGifs: oldGif});
+      });
+    });
+
   });
 
   app.get("/newpost", isAuthenticated, function(req, res){
     res.render("newpost", {newpostJs: true});
-  });
-
-  app.get("/vote", isAuthenticated, function(req, res){
-    res.render("oldpost", {oldgifJs: true});
   });
 
   app.get("/gifpost/:id", isAuthenticated, function(req, res){

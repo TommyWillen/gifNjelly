@@ -10,9 +10,11 @@ module.exports = function(sequelize, Sequelize, DataTypes) {
     },
     gifScore: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     jellyScore: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     }
   });
 
