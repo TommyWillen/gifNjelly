@@ -61,10 +61,6 @@ module.exports = (app) => {
           caption: gif.caption
         };
         oldGif.push(giphy);
-<<<<<<< HEAD
-=======
-        res.render("oldpost", {oldpostJs: true, giphyPosts: oldGif});
->>>>>>> Dev
       });
 
       let limitedGifs = [];
