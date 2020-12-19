@@ -22,12 +22,12 @@ $(document).ready(function(){
           title: "Oops",
           //========================
           html:
-          'Your email or password does not match. Please try again or, ' +
-          '<a href="./signup"><b>sign-up</b></a> ',
+          "Your email or password does not match. Please try again or, " +
+          "<a href=\"./signup\"><b>sign-up</b></a> ",
           text: "Your email or password does not match. Please try again or sign-up.",
         }).then(function(){
           location.reload();
-        })
+        });
 
 
       });
@@ -53,15 +53,15 @@ $(document).ready(function(){
         title: "Email can not be empty",
       }).then(function(){
         location.reload();
-      });      
+      });
     } else if (userData.password === ""){
 
-        Swal.fire({
-          icon: "warning",
-          title: "Password can not be empty",
-        }).then(function(){
-          location.reload();
-        });
+      Swal.fire({
+        icon: "warning",
+        title: "Password can not be empty",
+      }).then(function(){
+        location.reload();
+      });
     }
     //---end fire
 
