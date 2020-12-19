@@ -35,8 +35,7 @@ module.exports = (app, axios) => {
     // const json = await response.json();
 
   });
-  // call to create post
-
+  
   // call to create user
 
   // call to create post

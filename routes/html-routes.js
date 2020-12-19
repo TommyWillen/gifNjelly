@@ -45,7 +45,7 @@ module.exports = (app) => {
 
   app.get("/gifpost/:id", isAuthenticated, function(req, res){
     let selectedGif = req.params.id;
-    res.render("newpost", {gifId:selectedGif, newpostJs: true});
+    res.render("newpost", {newpostJs: true, gifId: selectedGif});
   });
 
   // app.post("/newpost", function(req, res){
