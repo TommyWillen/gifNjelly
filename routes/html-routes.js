@@ -18,26 +18,33 @@ module.exports = (app) => {
     res.render("signup", {signupJs: true});
   });
 
-app.get("/meettheteam", function(req, res){
-  res.render("meettheteam");
-});
+  app.get("/meettheteam", function(req, res){
+    res.render("meettheteam");
+  });
 
-// app.get("/meettheteam", function(req, res){
-//   res.render("meettheteam", {membersJs: true});
-// });
+  // app.get("/meettheteam", function(req, res){
+  //   res.render("meettheteam", {membersJs: true});
+  // });
 
 
   app.get("/members", function(req, res){
     res.render("members", {membersJs: true});
   });
 
-app.get("/newpost", function(req, res){
-  res.render("newpost", {newpostJs: true});
-});
+  app.get("/newpost", function(req, res){
+    res.render("newpost", {newpostJs: true});
+  });
 
-app.get("/oldpost", function(req, res){
-  res.render("newpost", {oldgifJs: true});
-});
+  app.get("/oldpost", function(req, res){
+  // this is a placeholder until we get actual posts into the database
+    let oldGif = {
+      gifId: "OVHV6lLv6tfWFAhWyi",
+      caption: "Shopping during christmas be like...",
+      gifScore: 0,
+      jellyScore: 0,
+    };
+    res.render("oldpost", {oldgifJs: true, oldGifs: [oldGif]});
+  });
 
   app.get("/gifpost/:id", function(req, res){
     let selectedGif = req.params.id;
@@ -52,4 +59,4 @@ app.get("/oldpost", function(req, res){
 
   // });
 
-}
+};

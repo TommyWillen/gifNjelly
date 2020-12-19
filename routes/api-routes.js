@@ -1,7 +1,6 @@
 const db = require("../models");
 const passport = require("../config/passport");
 require("dotenv").config();
-const axios = require("axios");
 
 module.exports = (app, axios) => {
   // call to login
@@ -27,7 +26,7 @@ module.exports = (app, axios) => {
   });
 
   //   call to grab 5 random giphies
-  app.get("/api/gif/random", (req,res) => {
+  app.get("/api/gif/random", (req, res) => {
     const route = "https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.API_KEY + "&limit=4&rating=g";
     axios.get(route).then(response => {
       res.json(response.data);
@@ -108,13 +107,13 @@ module.exports = (app, axios) => {
 
 
   // call to post a vote
-  app.post("/api/vote/:postId"), function(req, res){
+  app.post("/api/vote/:postId", (req, res) => {
     let postId = req.params.postId;
     let gifVote = req.body.gif;
     let jellyVote = req.body.jelly;
     let userId = req.body.userId;
 
-    function deleteVote(postId, userId){
+    function deleteVote(postId, userId) {
       db.Vote.destroy({
         where: {
           GiphyPostId: postId,
@@ -123,7 +122,7 @@ module.exports = (app, axios) => {
       });
     }
 
-    function addVote(postId, userId, gifVote, jellyVote){
+    function addVote(postId, userId, gifVote, jellyVote) {
       db.Vote.create({
         gif: gifVote,
         jelly: jellyVote,
@@ -137,7 +136,7 @@ module.exports = (app, axios) => {
           where: {
             id: postId
           }
-        }).then(function(result){
+        }).then(function (result) {
           newGifScore = parseInt(result.gifScore) + 1;
           db.GiphyPost.update({
             gifScore: newGifScore
@@ -147,7 +146,7 @@ module.exports = (app, axios) => {
               id: postId
             }
           }
-          ).then(function(){
+          ).then(function () {
             res.end;
           });
         });
@@ -159,7 +158,7 @@ module.exports = (app, axios) => {
           where: {
             id: postId
           }
-        }).then(function(result){
+        }).then(function (result) {
           newJellyScore = parseInt(result.jellyScore) + 1;
           db.GiphyPost.update({
             jellyScore: newJellyScore
@@ -169,7 +168,7 @@ module.exports = (app, axios) => {
               id: postId
             }
           }
-          ).then(function(){
+          ).then(function () {
             res.end;
           });
         });
@@ -181,7 +180,7 @@ module.exports = (app, axios) => {
       where: {
         GiphyPostId: postId
       }
-    }).then(function(result){
+    }).then(function (result) {
       let alreadyVoted = result.filter(vote => vote.UserId === userId);
       if (alreadyVoted) {
         deleteVote(postId, userId);
@@ -191,11 +190,11 @@ module.exports = (app, axios) => {
         res.end;
       }
     })
-      .catch(function(err){
+      .catch(function (err) {
         console.log(err);
         res.end;
       });
-  };
+  });
 
 };
 // call to update jif score

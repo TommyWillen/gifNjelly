@@ -1,3 +1,7 @@
+// $(document).ready(() => {
+
+// })
+
 function postVote(voteType, postId){
   let gif;
   let jelly;
