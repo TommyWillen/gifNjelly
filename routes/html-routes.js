@@ -1,7 +1,7 @@
 // const path = require("path");
 // const express = require("express");
 
-const isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
 // const sequelize = require("sequelize");
 
@@ -35,39 +35,40 @@ module.exports = (app) => {
   app.get("/vote", isAuthenticated, function(req, res){
   // this is a placeholder until we get actual posts into the database
     db.GiphyPost.findAll({
+    // order: sequelize.random(),
       include: [db.User],
+
     }).then(gifPost => {
-    // let gifPostFilter = gifPost.filter(post => post.username !== req.user.userName);
-    // res.json(gifPostFilter);
-      //looping through the array, starting at the last value
-      let shuffledGifs = gifPost;
-      for (let i = shuffledGifs.length - 1; i > 0; i--) {
+      for (var i = gifPost.length - 1; i > 0; i--) {
         //choosing a random number between 0 and the length of the array
-        let j = Math.floor(Math.random() * (i + 1));
+        var j = Math.floor(Math.random() * (i + 1));
         //creating a variable which gets the last item of the array
-        let selected = shuffledGifs[i];
+        var selected = gifPost[i];
         // making the last item of the array the randomly selected array value
-        shuffledGifs[i] = shuffledGifs[j];
+        gifPost[i] = gifPost[j];
         //moving the value that was initially the last value of the array to the position of the randomly selected value
-        shuffledGifs[j] = selected;
+        gifPost[j] = selected;
       }
-      console.log(shuffledGifs[0]);
       let oldGif = [];
-      for (let i = 0; i<6; i++ ) {
-        let gifId = shuffledGifs[i].gifId;
-        let gifScore = gifPost[i].gifScore;
-        let jellyScore = gifPost[i].jellyScore;
-        let caption = gifPost[i].caption;
+
+      gifPost.forEach(gif => {
         let giphy = {
-          // userName: gifPost[i].dataValues.User.userName,
-          gifId: gifId,
-          gifScore: gifScore,
-          jellyScore: jellyScore,
-          caption: caption
+          userName: gif.User.userName,
+          gifId: gif.gifId,
+          gifScore: gif.gifScore,
+          jellyScore: gif.jellyScore,
+          caption: gif.caption
         };
         oldGif.push(giphy);
+      });
+
+      let limitedGifs = [];
+
+      for (let i=0; i<6; i++){
+        limitedGifs.push(oldGif[i]);
       }
-      res.render("oldpost", {oldpostJs: true, oldGifs: oldGif});
+
+      res.render("oldpost", {oldpostJs: true, giphyPosts: limitedGifs});
     });
 
   });
