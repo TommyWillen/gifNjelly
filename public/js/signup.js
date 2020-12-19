@@ -20,10 +20,22 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+          //Welcome fire
+          Swal.fire({
+            icon: "success",
+            title: "Sign-up success!",
+            text: "Welcome " + firstName + " " + lastName
+          })
+          .then(function(){
+            window.location.replace("/login");
+          })
+          .catch(handleLoginErr);
+          //end fire
+
+        // window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
+     
   };
 
   $("#sign-btn").click(function (event) {
@@ -49,6 +61,7 @@ $(document).ready(() => {
   //   emailInput.val("");
   //   pass1Input.val("");
   //   pass2Input.val("");
+
   });
 
 
