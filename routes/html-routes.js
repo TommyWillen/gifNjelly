@@ -1,7 +1,7 @@
 // const path = require("path");
 // const express = require("express");
 
-// var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 module.exports = (app) => {
@@ -18,28 +18,32 @@ module.exports = (app) => {
     res.render("signup", {signupJs: true});
   });
 
-app.get("/meettheteam", function(req, res){
-  res.render("meettheteam");
-});
+  app.get("/meettheteam", function(req, res){
+    res.render("meettheteam");
+  });
 
-// app.get("/meettheteam", function(req, res){
-//   res.render("meettheteam", {membersJs: true});
-// });
+  // app.get("/meettheteam", function(req, res){
+  //   res.render("meettheteam", {membersJs: true});
+  // });
 
 
-  app.get("/members", function(req, res){
+  app.get("/members", isAuthenticated, function(req, res){
     res.render("members", {membersJs: true});
   });
 
-app.get("/newpost", function(req, res){
-  res.render("newpost", {newpostJs: true});
-});
+  app.get("/newpost", isAuthenticated, function(req, res){
+    res.render("newpost", {newpostJs: true});
+  });
 
-app.get("oldpost", function(req, res){
-  res.render("newpost", {oldgifJs: true});
-});
+  app.get("oldpost", isAuthenticated, function(req, res){
+    res.render("newpost", {oldgifJs: true});
+  });
 
-  app.get("/gifpost/:id", function(req, res){
+  app.get("/vote", isAuthenticated, function(req, res){
+    res.render("oldpost", {oldgifJs: true});
+  });
+
+  app.get("/gifpost/:id", isAuthenticated, function(req, res){
     let selectedGif = req.params.id;
     res.render("newpost", {gifId:selectedGif, newpostJs: true});
   });
@@ -52,4 +56,4 @@ app.get("oldpost", function(req, res){
 
   // });
 
-}
+};

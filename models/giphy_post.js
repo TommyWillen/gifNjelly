@@ -13,15 +13,7 @@ module.exports = function(sequelize, Sequelize, DataTypes) {
     },
     jellyScore: {
       type: DataTypes.INTEGER,
-    },
-    createdAt: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-    },
-    updatedAt: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"),
-    },
+    }
   });
 
   GiphyPost.associate = function(models) {
