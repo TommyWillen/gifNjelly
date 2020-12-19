@@ -62,7 +62,7 @@ module.exports = (app) => {
         };
         oldGif.push(giphy);
       });
-
+      console.log(oldGif[0].userName)
       let limitedGifs = [];
 
       for (let i=0; i<6; i++){

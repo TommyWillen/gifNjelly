@@ -20,22 +20,19 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-          //Welcome fire
-          Swal.fire({
-            icon: "success",
-            title: "Sign-up success!",
-            text: "Welcome " + firstName + " " + lastName
-          })
+        //Welcome fire
+        Swal.fire({
+          icon: "success",
+          title: "Sign-up success!",
+          text: "Welcome " + firstName + " " + lastName
+        })
           .then(function(){
-            window.location.replace("/login");
-          })
-          .catch(handleLoginErr);
-          //end fire
-
+            window.location.replace("/member");
+          }).catch(handleLoginErr);
+        //end fire
         // window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
-      })
-     
+      });
   };
 
   $("#sign-btn").click(function (event) {
