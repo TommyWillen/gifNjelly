@@ -71,23 +71,12 @@ function randomGif() {
   });
 }
 
+
 //loading newpost.html to do the next action
 //this is where we can input comment
 // function newPost() {
-
-//   $.ajax({
-//     url: "/newpost",
-//     method: "POST",
-//     data: {
-//       //***********ERR****** */
-//       imagefile: localGifUrl,
-//     },
-//   }).then(function (err) {
-//     console.log("checking localGifUrl value: ", localGifUrl);
-
-//     if (err) throw err;
-
-//     //need to redirect
+  
+//   //need to redirect
 //   });
 // }
 

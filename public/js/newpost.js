@@ -5,6 +5,7 @@ $("#submitButton").click(function (event) {
   let giphyPost = {
     gifId: gifId,
     caption: caption,
+    gifId:gifId
   };
   console.log(giphyPost);
   $.ajax("/api/newpost", {
