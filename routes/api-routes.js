@@ -27,7 +27,7 @@ module.exports = (app, axios) => {
 
   //   call to grab 5 random giphies
   app.get("/api/gif/random", (req, res) => {
-    const route = "https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.API_KEY + "&limit=4&rating=g";
+    const route = "https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.API_KEY + "&limit=6";
     axios.get(route).then(response => {
       res.json(response.data);
     });
