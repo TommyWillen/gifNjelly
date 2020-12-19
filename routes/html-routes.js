@@ -31,17 +31,17 @@ app.get("/meettheteam", function(req, res){
     res.render("members", {membersJs: true});
   });
 
-app.get("/newpost", function(req, res){
-  res.render("newpost", {newpostJs: true});
-});
+// app.get("/newpost", function(req, res){
+//   res.render("newpost", {newpostJs: true});
+// });
 
-app.get("oldpost", function(req, res){
-  res.render("newpost", {oldgifJs: true});
+app.get("/oldpost", function(req, res){
+  res.render("oldpost", {oldgifJs: true});
 });
 
   app.get("/gifpost/:id", function(req, res){
     let selectedGif = req.params.id;
-    res.render("newpost", {gifId:selectedGif, newpostJs: true});
+    res.render("newpost", {newpostJs: true, gifId: selectedGif});
   });
 
   // app.post("/newpost", function(req, res){
