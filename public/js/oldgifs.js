@@ -1,14 +1,23 @@
 $(document).ready(() => {
-
+  let oldGifScore;
+  let newGifScore;
+  let oldJellyScore;
+  let newJellyScore;
   function postVote(voteType, postId){
     let gif;
     let jelly;
     if (voteType === "gif"){
       gif = true;
       jelly = false;
+      oldGifScore = $("#gifScoreSpan").text();
+      newGifScore = parseInt(oldGifScore) + 1;
+      $("#gifScoreSpan").text(newGifScore);
     } else {
       jelly = true;
       gif = false;
+      oldJellyScore = $("#jellyScoreSpan").text();
+      newJellyScore = parseInt(oldJellyScore) + 1;
+      $("#gifScoreSpan").text(newJellyScore);
     }
     let gifOrJelly = {
       gif: gif,
