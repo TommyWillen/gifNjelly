@@ -27,8 +27,9 @@ $(document).ready(() => {
           text: "Welcome " + firstName + " " + lastName
         })
           .then(function(){
-            window.location.replace("/member");
-          }).catch(handleLoginErr);
+            window.location.replace("/members");
+          })
+          // .catch(handleLoginErr);
         //end fire
         // window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
