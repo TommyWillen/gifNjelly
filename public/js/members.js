@@ -1,9 +1,3 @@
-
-// require("dotenv").config();
-// require('dotenv').config({path:__dirname+'/./../../.env'})
-
-// let localGifUrl = "";
-let localGifId = "";
 let limit = 4;
 
 
@@ -15,11 +9,9 @@ function randomGif() {
     url: "/api/gif/random",
     method: "GET"
   }).then(function (response) {
-    console.log(response);
 
     for (var i = 0; i < limit; i++) {
       const gifImg = response.data[i].images.fixed_width.url;
-      // console.log(gifImg);
 
       const gifTitle = response.data[i].title;
       const gifId = response.data[i].id;
@@ -57,28 +49,15 @@ function randomGif() {
 
       //getting id on selected and next move.
       cardButton.on("click", function (gifId) {
-        console.log(gifId);
-        // console.log("Value: ", gifId.currentTarget.attributes[2].value);
         let newGifId = gifId.currentTarget.attributes[2].value;
         localGifUrl = newGifId;
 
         //Call function that will load selected gif and control gif.html
-        // console.log("the url for localGifUrl:", localGifUrl);
-        // newPost();
         location.href = "/newgif";
       });
     }
   });
 }
-
-
-//loading newpost.html to do the next action
-//this is where we can input comment
-// function newPost() {
-  
-//   //need to redirect
-//   });
-// }
 
 //Click handler
 $(document).ready(function () {

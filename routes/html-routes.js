@@ -53,6 +53,7 @@ module.exports = (app) => {
 
       gifPost.forEach(gif => {
         let giphy = {
+          id: gif.id,
           userName: gif.User.userName,
           gifId: gif.gifId,
           gifScore: gif.gifScore,
@@ -60,6 +61,10 @@ module.exports = (app) => {
           caption: gif.caption
         };
         oldGif.push(giphy);
+<<<<<<< HEAD
+=======
+        res.render("oldpost", {oldpostJs: true, giphyPosts: oldGif});
+>>>>>>> Dev
       });
 
       let limitedGifs = [];
