@@ -13,7 +13,7 @@ module.exports = function(sequelize, Sequelize, DataTypes) {
     },
     jellyScore: {
       type: DataTypes.INTEGER,
-    },
+    }
   });
 
   GiphyPost.associate = function(models) {

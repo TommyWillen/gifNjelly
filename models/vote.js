@@ -7,7 +7,7 @@ module.exports = function(sequelize, Sequelize, DataTypes) {
     jelly: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-    },
+    }
   });
 
   Vote.associate = function(models) {

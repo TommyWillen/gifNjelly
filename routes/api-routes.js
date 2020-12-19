@@ -39,21 +39,22 @@ module.exports = (app, axios) => {
   // call to create user
 
   // call to create post
-  app.post("/api/giphypost"), function (req, res) {
+  app.post("/api/newpost", (req, res) => {
+    console.log("REQ ID: " + req.user.id);
     db.GiphyPost.create({
       gifId: req.body.gifId,
       caption: req.body.caption,
-      UserId: req.body.userId
+      UserId: req.user.id
     })
-      .then(function () {
+      .then(function (result) {
         //!!change this redirect after we have the html routes decided!!
-        res.redirect(200, "/member");
+        res.json(result);
       })
       .catch(function (err) {
         console.log(err);
         res.end;
       });
-  };
+  });
 
   //   call to get 5 posts to vote on
   app.get("/api/giphypost/random", (req, res) => {
