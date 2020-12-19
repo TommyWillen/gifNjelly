@@ -5,7 +5,6 @@ require("dotenv").config();
 module.exports = (app, axios) => {
   // call to login
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    console.log(req.user);
     res.json(req.user);
   });
   // call to create user
@@ -39,7 +38,6 @@ module.exports = (app, axios) => {
 
   // call to create post
   app.post("/api/newpost", (req, res) => {
-    console.log("REQ ID: " + req.user.id);
     db.GiphyPost.create({
       gifId: req.body.gifId,
       caption: req.body.caption,
