@@ -30,31 +30,32 @@ module.exports = (app, axios) => {
   app.get("/api/gif/random", (req,res) => {
     const route = "https://api.giphy.com/v1/gifs/trending?api_key=" + process.env.API_KEY + "&limit=4&rating=g";
     axios.get(route).then(response => {
-        res.json(response.data);
-    })
+      res.json(response.data);
+    });
     // const json = await response.json();
-    
+
   });
   // call to create post
 
   // call to create user
 
   // call to create post
-  app.post("/api/giphypost"), function (req, res) {
+  app.post("/api/newpost", (req, res) => {
+    console.log("REQ ID: " + req.user.id);
     db.GiphyPost.create({
       gifId: req.body.gifId,
       caption: req.body.caption,
-      UserId: req.body.userId
+      UserId: req.user.id
     })
-      .then(function () {
+      .then(function (result) {
         //!!change this redirect after we have the html routes decided!!
-        res.redirect(200, "/member");
+        res.json(result);
       })
       .catch(function (err) {
         console.log(err);
         res.end;
       });
-  };
+  });
 
   //   call to get 5 posts to vote on
   app.get("/api/giphypost/random", (req, res) => {
@@ -108,7 +109,7 @@ module.exports = (app, axios) => {
 
 
   // call to post a vote
-  app.post("/api/vote/:postId"), function(req, res){
+  app.post("/api/vote/:postId", function(req, res){
     let postId = req.params.postId;
     let gifVote = req.body.gif;
     let jellyVote = req.body.jelly;
@@ -195,7 +196,7 @@ module.exports = (app, axios) => {
         console.log(err);
         res.end;
       });
-  };
+  });
 
 };
 // call to update jif score
