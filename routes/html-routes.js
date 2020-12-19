@@ -23,6 +23,10 @@ module.exports = (app) => {
     res.render("meettheteam");
   });
 
+  app.get("/contact", function(req, res){
+    res.render("contact");
+  })
+
   // app.get("/meettheteam", function(req, res){
   //   res.render("meettheteam", {membersJs: true});
   // });

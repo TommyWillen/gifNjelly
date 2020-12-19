@@ -28,8 +28,7 @@ $(document).ready(() => {
         })
           .then(function(){
             window.location.replace("/members");
-          })
-          // .catch(handleLoginErr);
+          }).catch(handleLoginErr);
         //end fire
         // window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
