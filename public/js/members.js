@@ -6,6 +6,8 @@
 let localGifId = "";
 let limit = 4;
 
+
+
 //--------calling random gifs--------
 
 function randomGif() {
@@ -94,5 +96,9 @@ $(document).ready(function () {
 
   $("#searchButton").on("click", function () {
     randomGif();
+  });
+
+  $("#historyButton").click(function(){
+    location.href = "/vote";
   });
 });
