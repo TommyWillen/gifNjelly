@@ -20,8 +20,48 @@ navbar {
 
 }  */
 
+/* contact form */
+body{
+  background-color: #25274d;
+}
+.contact{
+  padding: 4%;
+  height: 400px;
+}
+/* .col-md-3{
+  background: #d4b00f;
+  padding: 4%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+} */
+.contact-info{
+  margin-top:10%;
+}
+.contact-info img{
+  margin-bottom: 15%;
+}
+.contact-info h2{
+  margin-bottom: 10%;
+}
+.col-md-9{
+  background: #fff;
+  padding: 3%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+  font-weight:600;
+}
+.contact-form button{
+  background: red;
+  color: #fff;
+  font-weight: 600;
+  width: 25%;
+}
+
 body {
   margin-bottom: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .login {
@@ -46,19 +86,19 @@ box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 form {
   display: inline-block;
   overflow: hidden;
+  margin: 0 auto; 
+  width:350px;
+    
 }
 
 .navtext {
   color:#d4b00f;
 }
 
-.container {
-  align-content: center;
-  overflow: hidden;
-}
+
 
 .submitbtn {
-  color: white;
+  color: red;
 }
 
 .randomGifcol{
