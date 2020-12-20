@@ -5,21 +5,15 @@
 <div class="card" style="width: 18rem;">
     <img src="https://media2.giphy.com/media/{{this.gifId}}/200w.gif?cid=603c5c00zckhvodbm0oxr7brrw3oqsuiughyzh2er22hevs7&rid=200w.gif"
         class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text">{{this.userName}}:</p>
+    <div class="text-center card-body">
+        <h3 class="card-text">{{this.userName}}:</h3>
         <p class="card-text">{{this.caption}}</p>
         <div class="form-check">
-            <input class="gifVote form-check-input" type="radio" name="flexRadioDefault" id="gifScore" data-id="{{this.id}}">
-            <label class="form-check-label" for="flexRadioDefault1">
-                Gif this!
-            </label>
+            <button class="gifVote btn btn-info" type="button" data-id="{{this.id}}">Gif this!</button>
             <p>Gif Score <span id="gifScoreSpan{{this.id}}">{{this.gifScore}}</span></p>
         </div>
         <div class="form-check">
-            <input class="jellyVote form-check-input" type="radio" name="flexRadioDefault" id="jellyScore" data-id="{{this.id}}">
-            <label class="form-check-label" for="flexRadioDefault2">
-                Sooo Jelly!
-            </label>
+            <button class="jellyVote btn btn-info" type="button" data-id="{{this.id}}">Sooo Jelly!</button>
             <p>Jelly Score <span id="jellyScoreSpan{{this.id}}">{{this.jellyScore}}</span></p>
         </div>
     </div>

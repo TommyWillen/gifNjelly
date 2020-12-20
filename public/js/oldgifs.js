@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-  function updateUI(postId){
+  function updateUI(postId, voteType){
     console.log("more stuff");
     let gifScoreSpan = $(`#gifScoreSpan${postId}`);
     let jellyScoreSpan = $(`#jellyScoreSpan${postId}`);
@@ -8,9 +8,34 @@ $(document).ready(() => {
       method: "GET",
       url: "/api/updateVotes/" + postId,
     }).then( (results) => {
-      $(gifScoreSpan).text(results.gifScore);
-      $(jellyScoreSpan).text(results.jellyScore);
-      console.log(results);
+      let oldGifScore = $(gifScoreSpan).text();
+      let oldJellyScore = $(jellyScoreSpan).text();
+      oldGifScore = parseInt(oldGifScore)
+      oldJellyScore = parseInt(oldJellyScore)
+      let newGifScore = results.gifScore;
+      let newJellyScore = results.jellyScore;
+      $(gifScoreSpan).text(newGifScore);
+      $(jellyScoreSpan).text(newJellyScore);
+      console.log (`new score: ${newGifScore} ${newJellyScore}`)
+      console.log (`new score: ${oldGifScore} ${oldJellyScore}`)
+      console.log(voteType)
+      if(newGifScore === oldGifScore && newJellyScore === oldJellyScore && voteType === "gif") {
+        console.log("gif error")
+        Swal.fire({
+          imageUrl: "/Images/jelly-splat.png",
+          imageHeight: 80,
+          imageAlt: "Jelly Error Icon",
+          title: "You already gifed this!",
+        });
+      } else if(newGifScore === oldGifScore && newJellyScore === oldJellyScore && voteType === "jelly") {
+        console.log("jelly error")
+        Swal.fire({
+          imageUrl: "/Images/jelly-splat.png",
+          imageHeight: 80,
+          imageAlt: "Jelly Error Icon",
+          title: "You already jellied this!",
+        });
+      }
     });
   }
 
@@ -34,7 +59,7 @@ $(document).ready(() => {
       url: "/api/vote/" + postId,
       data: gifOrJelly
     }).then ( function(){
-      updateUI(postId);
+      updateUI(postId, voteType);
     }
     );
   }
