@@ -187,7 +187,6 @@ module.exports = (app, axios) => {
     createOrFindVote();
   });
 
-<<<<<<< HEAD
   app.get("/api/updateVotes/:postId", (req,res) => {
     db.GiphyPost.findOne({
       where: {
@@ -196,10 +195,8 @@ module.exports = (app, axios) => {
     }).then(results => res.json(results));
   });
 
-=======
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
   });
->>>>>>> Dev
 };
