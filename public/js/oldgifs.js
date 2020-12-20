@@ -1,69 +1,30 @@
 $(document).ready(() => {
-  let oldGifScore;
-  let newGifScore;
-  let oldJellyScore;
-  let newJellyScore;
 
-  let gifClicked = false;
-  let jellyClicked = false;
-
+  function updateUI(postId){
+    console.log("more stuff");
+    let gifScoreSpan = $(`#gifScoreSpan${postId}`);
+    let jellyScoreSpan = $(`#jellyScoreSpan${postId}`);
+    $.ajax({
+      method: "GET",
+      url: "/api/updateVotes/" + postId,
+    }).then( (results) => {
+      $(gifScoreSpan).text(results.gifScore);
+      $(jellyScoreSpan).text(results.jellyScore);
+      console.log(results);
+    });
+  }
 
   function postVote(voteType, postId){
     let gif;
     let jelly;
-    if (voteType === "gif" && gifClicked === false && jellyClicked === false){
+    if (voteType === "gif"){
       gif = true;
       jelly = false;
-      oldGifScore = $("#gifScoreSpan").text();
-      newGifScore = parseInt(oldGifScore) + 1;
-      $("#gifScoreSpan").text(newGifScore);
-      gifClicked = true;
-    } else if (voteType === "gif" && gifClicked === true && jellyClicked === false){
-      gif = true;
-      jelly = false;
-      oldGifScore = $("#gifScoreSpan").text();
-      newGifScore = parseInt(oldGifScore) - 1;
-      $("#gifScoreSpan").text(newGifScore);
-      gifClicked = false;
-    } else if (voteType === "gif" && gifClicked === false && jellyClicked === true){
-      gif = true;
-      jelly = false;
-      oldGifScore = $("#gifScoreSpan").text();
-      newGifScore = parseInt(oldGifScore) + 1;
-      $("#gifScoreSpan").text(newGifScore);
-
-      oldJellyScore = $("#jellyScoreSpan").text();
-      newJellyScore = parseInt(oldJellyScore) - 1;
-      $("#jellyScoreSpan").text(newJellyScore);
-      gifClicked =true;
-      jellyClicked =false;
-    } else if (voteType === "jelly" && jellyClicked === false && gifClicked === false){
+    } else {
       jelly = true;
       gif = false;
-      oldJellyScore = $("#jellyScoreSpan").text();
-      newJellyScore = parseInt(oldJellyScore) + 1;
-      $("#jellyScoreSpan").text(newJellyScore);
-      jellyClicked = true;
-    } else if (voteType === "jelly" && jellyClicked === true && gifClicked === false){
-      jelly = true;
-      gif = false;
-      oldJellyScore = $("#jellyScoreSpan").text();
-      newJellyScore = parseInt(oldJellyScore) - 1;
-      $("#jellyScoreSpan").text(newJellyScore);
-      jellyClicked = false;
-    } else if (voteType === "jelly" && jellyClicked === false && gifClicked === true){
-      jelly = true;
-      gif = false;
-      oldJellyScore = $("#jellyScoreSpan").text();
-      newJellyScore = parseInt(oldJellyScore) + 1;
-      $("#jellyScoreSpan").text(newJellyScore);
-
-      oldGifScore = $("#gifScoreSpan").text();
-      newGifScore = parseInt(oldGifScore) - 1;
-      $("#gifScoreSpan").text(newGifScore);
-      jellyClicked =true;
-      gifClicked =false;
     }
+
     let gifOrJelly = {
       gif: gif,
       jelly: jelly
@@ -72,7 +33,10 @@ $(document).ready(() => {
       method: "POST",
       url: "/api/vote/" + postId,
       data: gifOrJelly
-    });
+    }).then ( function(){
+      updateUI(postId);
+    }
+    );
   }
 
 
@@ -80,12 +44,12 @@ $(document).ready(() => {
   $(".gifVote").click(function(event) {
     event.preventDefault();
     postId = $(this).attr("data-id");
-    postVote("gif", postId, gifClicked, jellyClicked);
+    postVote("gif", postId);
   });
   $(".jellyVote").click(function(event) {
     event.preventDefault();
     postId = $(this).attr("data-id");
-    postVote("jelly", postId, gifClicked, jellyClicked);
+    postVote("jelly", postId);
   });
 
 });

@@ -189,4 +189,12 @@ module.exports = (app, axios) => {
     createOrFindVote();
   });
 
+  app.get("/api/updateVotes/:postId", (req,res) => {
+    db.GiphyPost.findOne({
+      where: {
+        id: parseInt(req.params.postId)
+      }
+    }).then(results => res.json(results));
+  });
+
 };
