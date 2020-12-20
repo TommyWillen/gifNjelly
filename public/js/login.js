@@ -17,6 +17,7 @@ $(document).ready(function(){
       })
       .catch(function(err) {
         console.log(err);
+        // fancy popup window that appears when the login information does not match
         Swal.fire({
           icon: "error",
           title: "Oops",
@@ -39,7 +40,7 @@ $(document).ready(function(){
       email: emailInput.val().trim(),
       password: passInput.val().trim()
     };
-    //fire
+    // handles error messages if missing user data in logging in
     if (userData.email === "" && userData.password === ""){
       Swal.fire({
         icon: "warning",
