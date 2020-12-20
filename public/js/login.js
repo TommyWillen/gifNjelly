@@ -19,7 +19,9 @@ $(document).ready(function(){
         console.log(err);
         // fancy popup window that appears when the login information does not match
         Swal.fire({
-          icon: "error",
+          imageUrl: "/Images/jelly-splat.png",
+          imageHeight: 80,
+          imageAlt: "Jelly Error Icon",
           title: "Oops",
           //========================
           html:
@@ -43,14 +45,18 @@ $(document).ready(function(){
     // handles error messages if missing user data in logging in
     if (userData.email === "" && userData.password === ""){
       Swal.fire({
-        icon: "warning",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Please enter your email and password",
       }).then(function(){
         location.reload();
       });
     } else if (userData.email === ""){
       Swal.fire({
-        icon: "warning",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Email can not be empty",
       }).then(function(){
         location.reload();
@@ -58,7 +64,9 @@ $(document).ready(function(){
     } else if (userData.password === ""){
 
       Swal.fire({
-        icon: "warning",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Password can not be empty",
       }).then(function(){
         location.reload();

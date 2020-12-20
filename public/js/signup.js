@@ -39,7 +39,9 @@ $(document).ready(() => {
     if (pass1Input.val().trim().length < 8) {
       console.log(true);
       Swal.fire({
-        icon: "error",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Oops...",
         text: "You password must be at least 8 characters long!",
       });
@@ -47,7 +49,9 @@ $(document).ready(() => {
     }else if(pass1Input.val().trim() !== pass2Input.val().trim()) {
       console.log("also true");
       Swal.fire({
-        icon: "error",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Oops...",
         text: "You passwords must match!",
       });
