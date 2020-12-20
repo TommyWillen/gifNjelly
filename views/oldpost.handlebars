@@ -8,19 +8,20 @@
     <div class="card-body">
         <p class="card-text">{{this.userName}}:</p>
         <p class="card-text">{{this.caption}}</p>
-
-                            <div class="form-check">
-                    <input class="gifVote form-check-input" type="radio" name="flexRadioDefault" id="gifScore" data-id="{{this.id}}">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Gif Score {{this.gifScore}}
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="jellyVote form-check-input" type="radio" name="flexRadioDefault" id="jellyScore" data-id="{{this.id}}">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Jelly Score {{this.jellyScore}}
-                    </label>
-                </div>
+        <div class="form-check">
+            <input class="gifVote form-check-input" type="radio" name="flexRadioDefault" id="gifScore" data-id="{{this.id}}">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Gif this!
+            </label>
+            <p>Gif Score <span id="gifScoreSpan{{this.id}}">{{this.gifScore}}</span></p>
+        </div>
+        <div class="form-check">
+            <input class="jellyVote form-check-input" type="radio" name="flexRadioDefault" id="jellyScore" data-id="{{this.id}}">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Sooo Jelly!
+            </label>
+            <p>Jelly Score <span id="jellyScoreSpan{{this.id}}">{{this.jellyScore}}</span></p>
+        </div>
     </div>
 </div>
 {{/each}}
