@@ -17,17 +17,20 @@ $(document).ready(function(){
       })
       .catch(function(err) {
         console.log(err);
+        // fancy popup window that appears when the login information does not match
         Swal.fire({
-          icon: "error",
+          imageUrl: "/Images/jelly-splat.png",
+          imageHeight: 80,
+          imageAlt: "Jelly Error Icon",
           title: "Oops",
           //========================
           html:
-          'Your email or password does not match. Please try again or, ' +
-          '<a href="./signup"><b>sign-up</b></a> ',
+          "Your email or password does not match. Please try again or, " +
+          "<a href=\"./signup\"><b>sign-up</b></a> ",
           text: "Your email or password does not match. Please try again or sign-up.",
         }).then(function(){
           location.reload();
-        })
+        });
 
 
       });
@@ -39,29 +42,35 @@ $(document).ready(function(){
       email: emailInput.val().trim(),
       password: passInput.val().trim()
     };
-    //fire
+    // handles error messages if missing user data in logging in
     if (userData.email === "" && userData.password === ""){
       Swal.fire({
-        icon: "warning",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Please enter your email and password",
       }).then(function(){
         location.reload();
       });
     } else if (userData.email === ""){
       Swal.fire({
-        icon: "warning",
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
         title: "Email can not be empty",
       }).then(function(){
         location.reload();
-      });      
+      });
     } else if (userData.password === ""){
 
-        Swal.fire({
-          icon: "warning",
-          title: "Password can not be empty",
-        }).then(function(){
-          location.reload();
-        });
+      Swal.fire({
+        imageUrl: "/Images/jelly-splat.png",
+        imageHeight: 80,
+        imageAlt: "Jelly Error Icon",
+        title: "Password can not be empty",
+      }).then(function(){
+        location.reload();
+      });
     }
     //---end fire
 

@@ -5,7 +5,6 @@ require("dotenv").config();
 module.exports = (app, axios) => {
   // call to login
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    console.log(req.user);
     res.json(req.user);
   });
   // call to create user
@@ -39,7 +38,6 @@ module.exports = (app, axios) => {
 
   // call to create post
   app.post("/api/newpost", (req, res) => {
-    console.log("REQ ID: " + req.user.id);
     db.GiphyPost.create({
       gifId: req.body.gifId,
       caption: req.body.caption,
@@ -189,6 +187,7 @@ module.exports = (app, axios) => {
     createOrFindVote();
   });
 
+<<<<<<< HEAD
   app.get("/api/updateVotes/:postId", (req,res) => {
     db.GiphyPost.findOne({
       where: {
@@ -197,4 +196,10 @@ module.exports = (app, axios) => {
     }).then(results => res.json(results));
   });
 
+=======
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+  });
+>>>>>>> Dev
 };
