@@ -187,4 +187,8 @@ module.exports = (app, axios) => {
     createOrFindVote();
   });
 
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+  });
 };

@@ -25,7 +25,7 @@ module.exports = (app) => {
 
   app.get("/contact", function(req, res){
     res.render("contact");
-  })
+  });
 
   // app.get("/meettheteam", function(req, res){
   //   res.render("meettheteam", {membersJs: true});
@@ -66,7 +66,6 @@ module.exports = (app) => {
         };
         oldGif.push(giphy);
       });
-      console.log(oldGif[0].userName)
       let limitedGifs = [];
 
       for (let i=0; i<6; i++){
