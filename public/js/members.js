@@ -36,7 +36,7 @@ function randomGif() {
       //individual id for each button
       const selectedBtn = "gifSelection" + i;
       const cardButton = $("<button>")
-        .addClass("btn btn-primary")
+        .addClass("btn btn-info btn-sm btn-block select-btn")
         .attr("id", selectedBtn)
         .text("Select");
       cardButton.attr("data-id", gifId);

@@ -1,4 +1,3 @@
-
 {{!-- pull history
 
 
@@ -6,33 +5,33 @@
 
 then give options for new gifs. --}}
 
-  <nav class="navbar justify-content-center navbar-expand-lg navbar-dark bg-dark navtext">
-    <br>
-    <img src="/Images/logo.png" width="70" height="70" class="d-inline-block align-top"><ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="members">Members Page <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item justify-content-end">
-        <a class="nav-link" href="login">Log out</a>
-      </li>
-    </ul>
-  </nav>
+<nav class="navbar justify-content-center navbar-expand-lg navbar-dark bg-dark navtext">
+  <br>
+  <img src="/Images/logo.png" width="70" height="70" class="d-inline-block align-top">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item active">
+      <a class="nav-link" href="members">Members Page <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item justify-content-end">
+      <a class="nav-link" href="login">Log out</a>
+    </li>
+  </ul>
+</nav>
 
-    <div class="container mt-3">
-      <div class="row">
-        <div class= "col-3"></div>
-        <div class="col-md-6 text-center members-page">
-          <h3 class="title">Post your caption and vote.</h3>
-          <button id="searchButton" type="button" class="btn btn-info">Search for a Gif to caption</button>
-          <button id="historyButton" type="button" class="btn btn-info">Vote on captioned Gifs</button>
-        </div>
-        <div class= "col-3"></div>
-      </div>
-
-      <div class="row">
-        <div id="imageCard" class="col-md-6" style="width: 15rem;"></div>
-      </div>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-md-6 text-center members-page">
+      <h3 class="title">Post your caption and vote.</h3>
+      <button id="searchButton" type="button" class="btn btn-info">Search for a Gif to caption</button>
+      <button id="historyButton" type="button" class="btn btn-info">Vote on captioned Gifs</button>
     </div>
+    <div class="col-3"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div id="imageCard" class="col-md-6" style="width: 15rem;"></div>
+    {{!-- <div id="imageCard" class="col-md-8" style="width: 15rem;"></div> --}}
   </div>
 </div>
-
