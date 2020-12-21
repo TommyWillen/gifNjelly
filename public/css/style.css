@@ -189,8 +189,9 @@ footer {
   margin: 0;
 }
 
-/* --------------members page-------------- */
-
+/* --------------members page and newpost styling-------------- */
+.posting-title,
+.voting-page,
 div .members-page {
   color: rgb(78, 53, 5);
   font-weight: 300;
@@ -205,7 +206,7 @@ div .members-page {
   margin-right: 5px;
 }
 
-
+.new-caption,
 .image-result {
   margin-top: 50px;
 
@@ -225,15 +226,27 @@ div .members-page {
 
 /* ------------------oldpost voting page --------------------- */
 
-.vote-title {
-  margin-top: 50px;
+  /* .voting-section {
+    margin-left: 25px;
+  } */
+
+.gifVote {
+  margin-right: 10px
+}
+
+.jellyVote{
+  margin-left: 10px;
 }
 .voting-card {
   /* margin-top: 50px; */
   /* margin-bottom: 10px; */
-  margin: 50px 5px 10px 5px;
+  margin: 50px 25px 10px 35px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   float: left;
+}
+
+.return-btn {
+  margin-top: 50px;
 }
 
 @media (max-width: 991px) {
