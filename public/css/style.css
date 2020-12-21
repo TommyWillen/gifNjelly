@@ -201,6 +201,22 @@ form {
 {
   margin:0
 }
+
+/* --------------members page-------------- */
+
+div .members-page{
+  color: rgb(78, 53, 5);
+  font-weight:300;
+  height: 150px;
+  width: 50%;
+  padding: 20px;
+  margin-top: 25px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+} 
+
+
+/* --------------------------------------- */
 @media (max-width:991px)
 {
   .site-footer [class^=col-]
