@@ -1,34 +1,52 @@
 <div class="container">
     <div class="row">
-        <div class="col-2"></div>
+        <div class="col-3"></div>
         <div class="col-md-8 text-center voting-page">
             <h3 class="title vote-title">Vote captioned gifs:</h3>
-            <div class="voting-section">
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-md-8 voting-section">
                 {{#each giphyPosts}}
                 <div class="card voting-card" style="width: 18rem;">
                     <img src="https://media2.giphy.com/media/{{this.gifId}}/200w.gif?cid=603c5c00zckhvodbm0oxr7brrw3oqsuiughyzh2er22hevs7&rid=200w.gif"
                         class="card-img-top" alt="...">
                     <div class="text-center card-body">
-                        <h3 class="card-text">{{this.userName}}:</h3>
+                        <h4 class="card-text">{{this.userName}}:</h4>
                         <p class="card-text">{{this.caption}}</p>
-                        <div class="form-check">
-                            <button class="gifVote btn btn-info" type="button" data-id="{{this.id}}">Gif this!</button>
-                            <p>Gif Score <span id="gifScoreSpan{{this.id}}">{{this.gifScore}}</span></p>
+                        <div class="row">
+                            <div class="form-check">
+                                <button class="gifVote btn btn-sm btn-warning" type="button" data-id="{{this.id}}">Gif
+                                    this!</button>
+                                <p>Gif Score <span id="gifScoreSpan{{this.id}}">{{this.gifScore}}</span></p>
+                            </div>
+                            <div class="form-check">
+                                <button class="jellyVote btn btn-sm btn-danger" type="button" data-id="{{this.id}}">Sooo
+                                    Jelly!</button>
+                                <p>Jelly Score <span id="jellyScoreSpan{{this.id}}">{{this.jellyScore}}</span></p>
+                            </div>
+
                         </div>
-                        <div class="form-check">
-                            <button class="jellyVote btn btn-info" type="button" data-id="{{this.id}}">Sooo
-                                Jelly!</button>
-                            <p>Jelly Score <span id="jellyScoreSpan{{this.id}}">{{this.jellyScore}}</span></p>
-                        </div>
+
                     </div>
                 </div>
                 {{/each}}
             </div>
+           
 
         </div>
-
-
+ 
+               
+            </div>
+<div class="row">
+                <div class="col-3"></div>
+<div class="col-md-8 return-btn">
+ <button id="returnButton" type="button" class="btn btn-info">Back to member's page</button>
+</div>
     </div>
+
+
+
 
 
 </div>

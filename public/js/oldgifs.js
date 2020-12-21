@@ -77,4 +77,7 @@ $(document).ready(() => {
     postVote("jelly", postId);
   });
 
+  $("#returnButton").click(function(){
+    location.href = "/members";
+  });
 });
