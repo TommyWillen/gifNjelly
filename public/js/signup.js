@@ -23,7 +23,9 @@ $(document).ready(() => {
       .then(() => {
         // fancy popup window that appears on success before redirecting you to the members page
         Swal.fire({
-          icon: "success",
+          imageUrl: "/Images/gifMan.png",
+          imageHeight: 80,
+          imageAlt: "Jelly Error Icon",
           title: "Sign-up success!",
           text: "Welcome " + firstName + " " + lastName
         })
