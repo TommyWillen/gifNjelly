@@ -72,7 +72,7 @@ module.exports = (app) => {
         limitedGifs.push(oldGif[i]);
       }
 
-      res.render("oldpost", {oldpostJs: true, giphyPosts: limitedGifs});
+      res.render("oldpost", {oldpostJs: true, giphyPostsLeft: [limitedGifs[0],limitedGifs[1],limitedGifs[2]], giphyPostsRight: [limitedGifs[3],limitedGifs[4],limitedGifs[5]]});
     });
 
   });
