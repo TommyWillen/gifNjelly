@@ -25,7 +25,7 @@ $(document).ready(() => {
         Swal.fire({
           imageUrl: "/Images/gifMan.png",
           imageHeight: 80,
-          imageAlt: "Jelly Error Icon",
+          imageAlt: "Gifman Sucess Icon",
           title: "Sign-up success!",
           text: "Welcome " + firstName + " " + lastName
         })
