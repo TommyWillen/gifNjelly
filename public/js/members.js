@@ -10,7 +10,7 @@ function randomGif() {
     method: "GET"
   }).then(function (response) {
 
-    for (var i = 0; i < Math.ceil(limit/2); i++) {
+    for (let i = 0; i < Math.ceil(limit/2); i++) {
       const gifImg = response.data[i].images.fixed_width.url;
 
       const gifTitle = response.data[i].title;
@@ -56,7 +56,7 @@ function randomGif() {
         location.href = "/newgif";
       });
     }
-    for (var i = Math.ceil(limit/2); i < limit; i++) {
+    for (let i = Math.ceil(limit/2); i < limit; i++) {
       const gifImg = response.data[i].images.fixed_width.url;
 
       const gifTitle = response.data[i].title;

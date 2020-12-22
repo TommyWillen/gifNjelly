@@ -34,8 +34,6 @@ module.exports = (app, axios) => {
 
   });
 
-  // call to create user
-
   // call to create post
   app.post("/api/newpost", (req, res) => {
     db.GiphyPost.create({
@@ -66,7 +64,6 @@ module.exports = (app, axios) => {
       res.json(gifPostFilter);
     });
   });
-  // call to get top 5 old posts
 
   // call to get one user's info
   app.get("/api/user/:id", (req, res) => {
@@ -85,6 +82,7 @@ module.exports = (app, axios) => {
       });
     }
   });
+
   // call to update user info
   app.put("/api/user", (req, res) => {
     if (!req.user) {
@@ -101,8 +99,6 @@ module.exports = (app, axios) => {
         });
     }
   });
-  // call to update jif score
-
 
   // call to post a vote
   app.post("/api/vote/:postId", (req,res) => {
@@ -187,6 +183,7 @@ module.exports = (app, axios) => {
     createOrFindVote();
   });
 
+  //call to get the giphyPost data for the post that was voted on
   app.get("/api/updateVotes/:postId", (req,res) => {
     db.GiphyPost.findOne({
       where: {
@@ -195,6 +192,7 @@ module.exports = (app, axios) => {
     }).then(results => res.json(results));
   });
 
+  //call to log user out
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
