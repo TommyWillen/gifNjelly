@@ -10,17 +10,17 @@ $(document).ready(() => {
     }).then( (results) => {
       let oldGifScore = $(gifScoreSpan).text();
       let oldJellyScore = $(jellyScoreSpan).text();
-      oldGifScore = parseInt(oldGifScore)
-      oldJellyScore = parseInt(oldJellyScore)
+      oldGifScore = parseInt(oldGifScore);
+      oldJellyScore = parseInt(oldJellyScore);
       let newGifScore = results.gifScore;
       let newJellyScore = results.jellyScore;
       $(gifScoreSpan).text(newGifScore);
       $(jellyScoreSpan).text(newJellyScore);
-      console.log (`new score: ${newGifScore} ${newJellyScore}`)
-      console.log (`new score: ${oldGifScore} ${oldJellyScore}`)
-      console.log(voteType)
+      console.log (`new score: ${newGifScore} ${newJellyScore}`);
+      console.log (`new score: ${oldGifScore} ${oldJellyScore}`);
+      console.log(voteType);
       if(newGifScore === oldGifScore && newJellyScore === oldJellyScore && voteType === "gif") {
-        console.log("gif error")
+        console.log("gif error");
         Swal.fire({
           imageUrl: "/Images/jelly-splat.png",
           imageHeight: 80,
@@ -28,7 +28,7 @@ $(document).ready(() => {
           title: "You already gifed this!",
         });
       } else if(newGifScore === oldGifScore && newJellyScore === oldJellyScore && voteType === "jelly") {
-        console.log("jelly error")
+        console.log("jelly error");
         Swal.fire({
           imageUrl: "/Images/jelly-splat.png",
           imageHeight: 80,
