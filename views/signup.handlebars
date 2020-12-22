@@ -1,47 +1,80 @@
 
-<div class="container">
-    <div class="row signup">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="/Images/logo.png" width="70" height="70" class="d-inline-block align-top"><ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+    <br>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="meettheteam">About Us<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login">Login</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="signup">Sign Up</a>
+      </li>
 
-        <div class="col-md-6 col-md-offset-3">
-            <h2>SIGN UP</h2>
-            <form class="sign-up">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="first-name" placeholder="First Name">
-                </div>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="members">Rate Giphys</a>
+      </li>
+    {{!-- <p class="nav-item">
+        <a class="nav-link me-2 logout" href="logout"><i class="fas fa-sign-out-alt"></i>Log out</a>
+      </p> --}}
+    
+    </ul>
+  </div>
+</nav>
+<br>
+<div class="container d-flex p-2 justify-content-center signup ">
 
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="last-name" placeholder="Last Name">
-                </div>
+  <div class=".form-row ">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="signup2">Sign Up</h2>
+      <form class="sign-up">
+        <div class="row">
+          <div class="form-group col">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="first-name" placeholder="First Name">
+          </div>
 
-                <div class="form-group">
-
-                    <label for="userName">Username</label>
-                    <input type="text" class="form-control" id="user-name" placeholder="Username">
-                </div>
-
-                <div class="form-group">
-
-                    <label for="emailInput">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="passwordInput">Password</label>
-                    <input type="password" class="form-control" id="password-input1" placeholder="Password">
-
-                    <small>Password must be at least 8 characters long</small>
-                </div>
-                  <div class="form-group">
-                    <label for="passwordInput">Password</label>
-                    <input type="password" class="form-control" id="password-input2" placeholder="Password">
-                    <small>Please type in your password again</small>
-                </div>
-             <button type="submit" class="btn btn-primary " id="sign-btn">Submit</button>
-                <div class="form-group">
-                <small>Already have an account? Login <a href="/login">here</a></small>
-                </div>
-            </form>    
+          <div class="form-group col">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+          </div>
         </div>
+
+        <div class="form-group">
+
+          <label for="userName">Username</label>
+          <input type="text" class="form-control" id="user-name" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+
+          <label for="emailInput">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">Password</label>
+          <input type="password" class="form-control" id="password-input1" placeholder="Password">
+
+          <small>Password must be at least 8 characters long</small>
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">Password</label>
+          <input type="password" class="form-control" id="password-input2" placeholder="Password">
+          <small>Please type in your password again</small>
+        </div>
+        <button type="submit" class="btn btn-primary " id="sign-btn">Submit</button>
+        <div class="form-group">
+          <small>Already have an account? Login <a href="/login">here</a></small>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
+<br>
+<br>
