@@ -83,7 +83,7 @@ module.exports = (app) => {
         userName: req.user.userName
       }
 
-      res.render("oldpost", {oldpostJs: true, user: user, giphyPosts: limitedGifs});
+      res.render("oldpost", {oldpostJs: true, user : user, giphyPostsLeft: [limitedGifs[0],limitedGifs[1],limitedGifs[2]], giphyPostsRight: [limitedGifs[3],limitedGifs[4],limitedGifs[5]]});
     });
 
   });
