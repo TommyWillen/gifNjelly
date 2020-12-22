@@ -13,7 +13,9 @@
 ## Description
 Welcome to the repository for gifNjelly! gifNjelly is an application where you can add hilarious captions to gifs, and vote on the captions added by other users. 
 
-!!! ADD ELEVATOR PITCH HERE !!!
+During these crazy times, we could all use a little bit of comfort. Inspired by your favorite comfort food, a PB&J, gifNjelly is here to provide just that. 
+
+gifNjelly allows users to interact with friends in a safe and socially distanced way online. Users are able to add their own creative captions to gifs that are currently trending. Other users are then able to vote on these captions. 
 
 We were able to explore a lot of different technologies while building this app. On the front end, we utilized the Bootstrap and JQuery libraries, as well as SweetAlert. Handlebars were used for templating. We also utilized the Giphy API to get random gifs. On the backend we utilized Express, Sequelize, and MySQL. We also used Passport and BCrypt for allowing user logins. Axios was used to hide our API keys. It was incredibly beneficial to have time to practice using all of these technologies. 
 
