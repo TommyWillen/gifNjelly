@@ -109,6 +109,7 @@ function randomGif() {
 $(document).ready(function () {
 
   $("#searchButton").on("click", function () {
+    $("#imageCard").empty();
     randomGif();
   });
 
