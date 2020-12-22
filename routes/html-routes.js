@@ -33,10 +33,16 @@ module.exports = (app) => {
 
 
   app.get("/members", isAuthenticated, function(req, res){
-    res.render("members", {membersJs: true});
+    const user = {
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      userName: req.user.userName
+    }
+    res.render("members", {membersJs: true, user: user});
   });
 
   app.get("/vote", isAuthenticated, function(req, res){
+    
   // this is a placeholder until we get actual posts into the database
     db.GiphyPost.findAll({
     // order: sequelize.random(),
@@ -71,19 +77,34 @@ module.exports = (app) => {
       for (let i=0; i<6; i++){
         limitedGifs.push(oldGif[i]);
       }
+      const user = {
+        firstName: req.user.firstName,
+        lastName: req.user.lastName,
+        userName: req.user.userName
+      }
 
-      res.render("oldpost", {oldpostJs: true, giphyPostsLeft: [limitedGifs[0],limitedGifs[1],limitedGifs[2]], giphyPostsRight: [limitedGifs[3],limitedGifs[4],limitedGifs[5]]});
+      res.render("oldpost", {oldpostJs: true, user : user, giphyPostsLeft: [limitedGifs[0],limitedGifs[1],limitedGifs[2]], giphyPostsRight: [limitedGifs[3],limitedGifs[4],limitedGifs[5]]});
     });
 
   });
 
   app.get("/newpost", isAuthenticated, function(req, res){
-    res.render("newpost", {newpostJs: true});
+    const user = {
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      userName: req.user.userName
+    }
+    res.render("newpost", {newpostJs: true, user: user});
   });
 
   app.get("/gifpost/:id", isAuthenticated, function(req, res){
+    const user = {
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      userName: req.user.userName
+    }
     let selectedGif = req.params.id;
-    res.render("newpost", {newpostJs: true, gifId: selectedGif});
+    res.render("newpost", {newpostJs: true, gifId: selectedGif, user: user});
   });
 
   // app.post("/newpost", function(req, res){

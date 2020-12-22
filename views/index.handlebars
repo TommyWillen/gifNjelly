@@ -1,34 +1,44 @@
-<nav class="navbar justify-content-center navbar-expand-lg navbar-dark bg-dark navtext">
-  <br>
-  <img src="/Images/logo.png" width="70" height="70" class="d-inline-block align-top">
-  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="signup">Sign Up</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Members Page</a>
-    </li>
-  </ul>
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="/Images/logo.png" width="70" height="70" class="d-inline-block align-top"><ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+    <br>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="meettheteam">About Us<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="signup">Sign Up</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="members">Rate Giphys</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container d-flex p-2 justify-content-center">
 <form class="form-box login">
   <div class="form-group ">
-    <h3>LOGIN </h3>
-    <label class="fas fa-at" for="exampleInputEmail1"> Email</label>
+    <h3 class="text">Login</h3>
+    <label class="fas fa-at" for="exampleInputEmail1">  Email</label>
     <input style="width: 18rem;" type="email" class="form-control" id="email"
       placeholder="Email">
   </div>
   <div class="form-group">
-    <label class="fas fa-lock" for="exampleInputPassword1"> Password</label>
+    <label class="fas fa-lock" for="exampleInputPassword1">  Password</label>
     <input style="width: 18rem;" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <br>
   <button type="submit" class="btn btn-primary " id="login">Submit</button>
   <div>
+    <br>
     <small id="emailHelp" class="form-text text-muted"fas fa-user-plus"">Don't have an account?  <a class="fas fa-user-plus" href="signup"> Sign Up</a> </small> 
   </div>
 </form>
