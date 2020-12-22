@@ -1,11 +1,9 @@
-body {
+body .text {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
-/* form-box {
-  align-items: center;
-} */
+
 
 /*---------navbar-------------*/
 navbar {
@@ -14,16 +12,7 @@ navbar {
   overflow: hidden;
 }
 
-/* .navtext {
-  font: ;
-} */
-/* 
-.login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-}  */
 
 /* contact form */
 body {
@@ -76,12 +65,43 @@ body {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* .signup {
+.signup {
   width: 320px;
-  height: 350px;
-  padding: 20px;
+  height: 680px;
+  padding: 2px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
+}
+
+.signup2 {
+  justify-content: center;
+
+}
+
+a:link {
+  color: white;
+}
+
+.welcome {
+  color: white;
+}
+
+.logout {
+  color: white;
+}
+
+.logout:hover {
+  color: #d4b00f;
+}
+
+.sign:hover .log:hover {
+  color: #d4b00f;
+}
+
+.team {
+  font-family: "Brush Script MT", cursive;
+  color: white;
+}
+
 
 .copyright-text {
   font-size: xx-small;
@@ -108,7 +128,7 @@ form {
   padding: 5px;
   margin: 20px;
 }
-/* -----------------------------footer --> 
+/* ----------------------footer --> 
 
  */
 
@@ -268,3 +288,4 @@ img {
     text-align: center;
   }
 }
+
