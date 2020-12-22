@@ -89,12 +89,22 @@ module.exports = (app) => {
   });
 
   app.get("/newpost", isAuthenticated, function(req, res){
-    res.render("newpost", {newpostJs: true});
+    const user = {
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      userName: req.user.userName
+    }
+    res.render("newpost", {newpostJs: true, user: user});
   });
 
   app.get("/gifpost/:id", isAuthenticated, function(req, res){
+    const user = {
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      userName: req.user.userName
+    }
     let selectedGif = req.params.id;
-    res.render("newpost", {newpostJs: true, gifId: selectedGif});
+    res.render("newpost", {newpostJs: true, gifId: selectedGif, user: user});
   });
 
   // app.post("/newpost", function(req, res){

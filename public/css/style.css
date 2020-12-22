@@ -3,9 +3,7 @@ body .text {
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
-/* form-box {
-  align-items: center;
-} */
+
 
 /*---------navbar-------------*/
 navbar {
@@ -13,17 +11,6 @@ navbar {
   top: 0;
   overflow: hidden;
 }
-
-/* .navtext {
-  font: ;
-} */
-/* 
-.login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}  */
 
 
 
@@ -115,12 +102,6 @@ a:link {
   color: white;
 }
 
-/* .signup {
-  width: 320px;
-  height: 350px;
-  padding: 20px;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
 
 .copyright-text {
   font-size: xx-small;
@@ -147,7 +128,7 @@ form {
   padding: 5px;
   margin: 20px;
 }
-/* -----------------------------footer --> 
+/* ----------------------footer --> 
 
  */
 
@@ -302,3 +283,16 @@ div .members-page {
     text-align: center;
   }
 }
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { ... }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { ... }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
