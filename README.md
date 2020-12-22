@@ -22,7 +22,7 @@ We were able to explore a lot of different technologies while building this app.
 ### Deployed Application
 [Checkout gifNjelly](https://mighty-fjord-82642.herokuapp.com/)
 
-<img src="/img/deployed.gif" alt="gif of deployed gifNjelly page in use">
+<img src="./public/Images/deployed.gif" alt="gif of deployed gifNjelly page in use">
 
 ## Installation
 <ol>
