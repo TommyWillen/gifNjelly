@@ -33,10 +33,16 @@ module.exports = (app) => {
 
 
   app.get("/members", isAuthenticated, function(req, res){
-    res.render("members", {membersJs: true});
+    const user = {
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      userName: req.user.userName
+    }
+    res.render("members", {membersJs: true, user: user});
   });
 
   app.get("/vote", isAuthenticated, function(req, res){
+    
   // this is a placeholder until we get actual posts into the database
     db.GiphyPost.findAll({
     // order: sequelize.random(),
@@ -71,8 +77,13 @@ module.exports = (app) => {
       for (let i=0; i<6; i++){
         limitedGifs.push(oldGif[i]);
       }
+      const user = {
+        firstName: req.user.firstName,
+        lastName: req.user.lastName,
+        userName: req.user.userName
+      }
 
-      res.render("oldpost", {oldpostJs: true, giphyPosts: limitedGifs});
+      res.render("oldpost", {oldpostJs: true, user: user, giphyPosts: limitedGifs});
     });
 
   });
